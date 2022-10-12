@@ -161,16 +161,18 @@
             <button class="navbar-link active" data-nav-link>About</button>
           </li>
 
-          <li class="navbar-item">
-            <button class="navbar-link  " data-nav-link>Resume</button>
-          </li>
 
-          <!-- <li class="navbar-item">
+
+           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li> -->
+          </li>
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
           <li class="navbar-item">
@@ -365,165 +367,243 @@
 
 
 
-      <!--
-        - #RESUME
+
+
+       <!--
+        - #PORTFOLIO
       -->
 
-      <article class="resume" data-page="resume">
+      <article class="portfolio" data-page="portfolio">
 
         <header>
-          <h2 class="h2 article-title">Resume</h2>
+          <h2 class="h2 article-title">Portfolio</h2>
         </header>
 
-        </section>
+        <section class="projects">
 
-        <section class="timeline">
+          <ul class="filter-list">
 
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
 
-            <h3 class="h3">Experience</h3>
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Applications</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web development</button>
+              </li>
+
+            </ul>
+
           </div>
 
-          <ol class="timeline-list">
+          <ul class="project-list">
 
-            <li class="timeline-item">
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="https://nbaapi-docs.netlify.app/" target="_blank">
 
-              <h4 class="h4 timeline-item-title">Technical Writer and Content Creator, DECENTRAPRESS</h4>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-              <span>Jan 2022 — May 2022</span>
+                  <img src="./assets/images/clown.jpg" alt="finance" loading="lazy">
+                </figure>
 
-              <p class="timeline-text">
-                - Increased reader conversions and blog traffic for the customer by writing technical product tutorials and articles.
+                <h3 class="project-title">Finance</h3>
 
-                - Enhanced brand perception and improved the company’s presence in the industry by creating articles and tutorials
-                in alignment with organizational goals.
-                
-                - Worked together with editors and content strategists to develop and put into practice fresh approaches to client
-                product positioning and marketing.
-                
-                - Improved the client’s relevance in the industry and drove reader traffic by frequently contributing content about the
-                latest technology trends to their blog.
-                
-              </p>
+                <p class="project-category">Web development</p>
 
+              </a>
             </li>
 
-            <li class="timeline-item">
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
 
-              <h4 class="h4 timeline-item-title">Machine Learning Engineering and Project Management Intern, STEM-AWAY </h4>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-              <span>Jun 2021 - Aug 2021 </span>
+                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                </figure>
 
-              <p class="timeline-text">
-                Coordinated Communication and Teamwork Between Team Members
-                • Managed the team over 4 different timezones
-                • Created and Implemented Recommender System with model accuracy of over 70%
-              </p>
+                <h3 class="project-title">Orizon</h3>
 
+                <p class="project-category">Web development</p>
+
+              </a>
             </li>
 
-            
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
 
-          </ol>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-        </section>
+                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                </figure>
 
-        <section class="skill">
+                <h3 class="project-title">Fundo</h3>
 
-          <h3 class="h3 skills-title">My skills</h3>
+                <p class="project-category">Web design</p>
 
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Technical communication | Content strategy | Information architecture </h5>
-                
-              </div>
+              </a>
             </li>
 
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Product documentation | Content design and development | Open source documentation</h5>
-                
-              </div>
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Brawlhalla</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
             </li>
 
-              
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
 
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                </figure>
+
+                <h3 class="project-title">DSM.</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
             </li>
 
-            <li class="skills-item">
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
 
-              <div class="title-wrapper">
-                <h5 class="h5">Languages: Python, SQL </h5>
-                
-              </div>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-            
+                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+                </figure>
 
+                <h3 class="project-title">MetaSpark</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
             </li>
 
-            <li class="skills-item">
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
 
-              <div class="title-wrapper">
-                <h5 class="h5">Frameworks: Tensorflow, Flask</h5>
-                
-              </div>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-              
+                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
+                </figure>
 
+                <h3 class="project-title">Summary</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
             </li>
 
-            <li class="skills-item">
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
 
-              <div class="title-wrapper">
-                <h5 class="h5">TOOLS: Text editors | MS Office | Swagger | Git | Docusarus | Postman</h5>
-                
-              </div>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-              
+                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
+                </figure>
 
+                <h3 class="project-title">Task Manager</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Arrival</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
             </li>
 
           </ul>
 
         </section>
 
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">University of Ibadan, Nigeria</h4>
-
-              <span> BSc. Statistics            2017 — Present</span>
-
-              <p class="timeline-text">
-                Related Coursework: Statistical Learning, Probability, Calculus, Algebra
-              </p>
-
-            </li>
-
-            
-
-          </ol>
-
       </article>
-
-
 
       <!--
         - #BLOG
@@ -731,7 +811,179 @@
 
       </article>
 
+      <!--
+        - #RESUME
+      -->
 
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Technical Writer and Content Creator, DECENTRAPRESS</h4>
+
+              <span>Jan 2022 — May 2022</span>
+
+              <p class="timeline-text">
+                - Increased reader conversions and blog traffic for the customer by writing technical product tutorials and articles.
+                                                
+              </p>
+
+              <p class="timeline-text">
+                - Enhanced brand perception and improved the company’s presence in the industry by creating articles and tutorials
+                in alignment with organizational goals. Sexy
+
+              </p>
+
+              <p class="timeline-text">
+                - Worked together with editors and content strategists to develop and put into practice fresh approaches to client
+                product positioning and marketing.
+
+              </p>
+
+              <p class="timeline-text">
+                - Improved the client’s relevance in the industry and drove reader traffic by frequently contributing content about the
+                latest technology trends to their blog.
+
+              </p>
+
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Machine Learning Engineering and Project Management Intern, STEM-AWAY </h4>
+
+              <span>Jun 2021 - Aug 2021 </span>
+
+              <p class="timeline-text">
+                • Coordinated Communication and Teamwork Between Team Members
+              </p>
+
+              <p class="timeline-text">
+                • Managed the team over 4 different timezones
+              </p>
+
+              <p class="timeline-text">
+                • Created and Implemented Recommender System with model accuracy of over 70%
+              </p>
+
+            </li>
+
+            
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Technical communication | Content strategy | Information architecture </h5>
+                
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Product documentation | Content design and development | Open source documentation</h5>
+                
+              </div>
+            </li>
+
+              
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Languages: Python, SQL </h5>
+                
+              </div>
+
+            
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Frameworks: Tensorflow, Flask</h5>
+                
+              </div>
+
+              
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">TOOLS: Text editors | MS Office | Swagger | Git | Docusarus | Postman</h5>
+                
+              </div>
+
+              
+
+            </li>
+
+          </ul>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">University of Ibadan, Nigeria</h4>
+
+              <span> BSc. Statistics            2017 — Present</span>
+
+              <p class="timeline-text">
+                Related Coursework: Statistical Learning, Probability, Calculus, Algebra
+              </p>
+
+            </li>
+
+            
+
+          </ol>
+
+      </article>
 
 
 
@@ -773,241 +1025,7 @@
       </article>
 
 
-       <!--
-        - #PORTFOLIO
-      -->
 
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Orizon</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
 
 
 
