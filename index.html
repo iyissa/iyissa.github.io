@@ -48,7 +48,7 @@
         <div class="info-content">
           <h1 class="name" title="Ayomide Yissa">Ayomide Yissa</h1>
 
-          <p class="title">ML Engineer | Technical Writer</p>
+          <p class="title">Technical Writer</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -161,16 +161,18 @@
             <button class="navbar-link active" data-nav-link>About</button>
           </li>
 
-          <li class="navbar-item">
-            <button class="navbar-link  " data-nav-link>Resume</button>
-          </li>
 
-          <!-- <li class="navbar-item">
+
+           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li> -->
+          </li>
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
           <li class="navbar-item">
@@ -197,17 +199,9 @@
 
         <section class="about-text">
           <p>
-            I am a Machine Learning Engineer and Technical Writer from Lagos, Nigeria.
-            I enjoy creating content that is easy to understand and serves the purpose of educating and informing the user. 
+            I am an experienced technical writer skilled in clearly explaining complex topics through documentation, guides, API references, and web content. With expertise spanning various niche industries, I have contributed to multiple open source projects, particularly in documenting APIs for sports and financial technology products. 
+            My primary goal is to enhance the usability and readability of technical documentation.
           
-          </p>
-
-          <p>
-            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-            Moreover, I
-            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-            across your
-            message and identity in the most creative way. I created web design for many famous brand companies.
           </p>
         </section>
 
@@ -222,22 +216,7 @@
 
           <ul class="service-list">
 
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="assets/images/ml.png
-                " alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Machine Learning</h4>
-
-                <p class="service-item-text">
-                  Using modern frameworks to create and implement models that will be beneficial for companies and users alike. 
-                </p>
-              </div>
-
-            </li>
+            
 
             <li class="service-item">
 
@@ -249,11 +228,28 @@
                 <h4 class="h4 service-item-title">Technical Writing</h4>
 
                 <p class="service-item-text">
-                  Creating Effective Content such as Documentation, Articles, Blog Posts, Inforgraphics,
+                  Producing quality documentation, articles, blog posts, and infographics.
                 </p>
               </div>
 
             </li>
+
+            <!-- <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="assets/images/ml.png
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">DS & Machine Learning</h4>
+
+                <p class="service-item-text">
+                  Using modern frameworks to create and implement models that will benefit both businesses and users.
+                </p>
+              </div>
+
+            </li> -->
 
             
 
@@ -271,6 +267,24 @@
           <h3 class="h3 testimonials-title">Worked For</h3>
 
           <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="assets/images/KO.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>KnowledgeOwl</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Software teams use KnowledgeOwl daily to build, manage, and share public and private knowledge bases with their customers and teams with ease.
+                  </p>
+                </div>
+
+              </div>
+            </li>
 
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
@@ -373,161 +387,357 @@
 
 
 
-      <!--
-        - #RESUME
+
+
+       <!--
+        - #PORTFOLIO
       -->
 
-      <article class="resume" data-page="resume">
+      <article class="portfolio" data-page="portfolio">
 
         <header>
-          <h2 class="h2 article-title">Resume</h2>
+          <h2 class="h2 article-title">Portfolio</h2>
         </header>
 
-        <section class="timeline">
+        <section class="projects">
 
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
+          <ul class="filter-list">
 
-            <h3 class="h3">Education</h3>
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Documentation</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Open Source</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Diataxis</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Documentation</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Open Source</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Diataxis</button>
+              </li>
+
+            </ul>
+
           </div>
 
-          <ol class="timeline-list">
+          <ul class="project-list">
 
-            <li class="timeline-item">
+            <li class="project-item  active" data-filter-item data-category="documentation">
+              <a href="https://ayomide-yissa.gitbook.io/yh-finance-docs/" target="_blank">
 
-              <h4 class="h4 timeline-item-title">University of Ibadan, Nigeria</h4>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-              <span> BSc. Statistics            2017 — Present</span>
+                  <img src="./assets/images/finance_docs.jpg" alt="finance" loading="lazy">
+                </figure>
 
-              <p class="timeline-text">
-                Related Coursework: Statistical Learning, Probability, Calculus, Algebra
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
+                <h3 class="project-title">Finance API Documentation</h3>
 
+                <p class="project-category">Documentation</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="diataxis">
+              <a href="https://blog.knowledgeowl.com/blog/posts/optimizing-visuals-in-tech-docs/" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="assets/images/barnowl-color.png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Optimizing Visuals in Technical Documentation</h3>
+
+                <p class="project-category">Guides</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="diataxis">
+              <a href="https://ayoyissa.hashnode.dev/what-is-a-confusion-matrix" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="assets/images/confusion.avif" alt="Photo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">What is a Confusion Matrix?</h3>
+
+                <p class="project-category">Reference</p>
+
+              </a>
+            </li>
+ 
+            <li class="project-item  active" data-filter-item data-category="diataxis">
+              <a href="https://ayoyissa.hashnode.dev/fake-news-detection-with-machine-learning-and-flask" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/fake_news.jpg" alt="Photo by Kayla Velasquez on unsplash" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Fake News Detection with Machine Learning and Flask</h3>
+
+                <p class="project-category">Tutorial</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="diataxis">
+              <a href="https://ayoyissa.hashnode.dev/evaluation-metrics-for-an-ml-regression-model" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="assets/images/eval.jpg" alt="Photo by Dan-Cristian Pădureț on Unsplash" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Evaluation Metrics for Machine Learning Regression</h3>
+
+                <p class="project-category">How-To Guides</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="diataxis">
+              <a href="https://decentrapress.com/interoperability/" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="assets/images/interoperability.jpg" alt="Photo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Blockchain Interoperability</h3>
+
+                <p class="project-category">Explanation</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="diataxis">
+              <a href="https://ayoyissa.hashnode.dev/using-nba-api-package-tutorial" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/nba_api.jpg" alt="Photo by Jed Villejo on Unsplash" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Using NBA-API package Tutorial</h3>
+
+                <p class="project-category">Tutorial</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="documentation">
+              <a href="https://nbaapi-docs.netlify.app/" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/nba_api.jpg" alt="NBA Package Documentation" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">NBA-API Docs</h3>
+
+                <p class="project-category">OS Documentation Contribution</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="open source">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="assets/images/download.png" alt="The Good Docs Project" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">The Good Docs Project</h3>
+
+                <p class="project-category">Open Source Technical Documentation</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="open source">
+              <a href="https://docs.mindsdb.com/integrations/data-integrations/ibm-db2" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="assets/images/mindsdb.png" alt="MindsDb Logo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Mindsdb Ibm-db2 Integration Docs.</h3>
+
+                <p class="project-category">Documentation</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="open source">
+              <a href="https://ayoyissa.hashnode.dev/mindsdb-tutorial-how-to-predict-the-cost-of-weather-and-climate-disasters" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="assets/images/mindsb_article.png" alt="MindsDb Logo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Mindsdb Tutorial Contribution</h3>
+
+                <p class="project-category">Tutorial</p>
+
+              </a>
+            </li>
+            
+            <li class="project-item  active" data-filter-item data-category="diataxis">
+              <a href="https://ayoyissa.hashnode.dev/analyzing-real-time-stock-data-with-python-and-streamlit" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="assets/images/stock.avif" alt="Photo by Chris Liverani on Unsplash" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Stock Data Tutorial with Python and Streamlit</h3>
+
+                <p class="project-category">Tutorial</p>
+
+              </a>
             </li>
 
             
+            
+            <li class="project-item  active" data-filter-item data-category="diataxis">
+              <a href="https://dev.to/iyissa/machine-learning-and-tabular-data-mbm" target="_blank">
 
-          </ol>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-        </section>
+                  <img src="assets/images/tab.jpg" alt="Photo by Alina Grubnyak on Unsplash" loading="lazy">
+                </figure>
 
-        <section class="timeline">
+                <h3 class="project-title">Machine Learning and Tabular Data</h3>
 
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
+                <p class="project-category">How-To Guides</p>
 
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Technical Writer and Content Creator, DECENTRAPRESS</h4>
-
-              <span>Jan 2022 — Present</span>
-
-              <p class="timeline-text">
-                - Created Content on various Web3 topics
-                - Prepared high quality written copy by carefully creating, proofreading and editing work
-                - Collaborated with Editor to come up with new topic ideas, and develop topics to full articles
-                - Edited Drafts, Proofread, and returned works to authors for review 
-              </p>
-
+              </a>
             </li>
 
-            <li class="timeline-item">
+            <li class="project-item  active" data-filter-item data-category="diataxis">
+              <a href="https://decentrapress.com/the-role-of-miners-in-blockchain-cryptocurrency/" target="_blank">
 
-              <h4 class="h4 timeline-item-title">Machine Learning Engineering and Project Management Intern, STEM-AWAY </h4>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-              <span>Jun 2021 - Aug 2021 </span>
+                  <img src="assets/images/mine.jpg" alt="Photo" loading="lazy">
+                </figure>
 
-              <p class="timeline-text">
-                Coordinated Communication and Teamwork Between Team Members
-                • Managed the team over 4 different timezones
-                • Created and Implemented Recommender System with model accuracy of over 70%
-              </p>
+                <h3 class="project-title">The role of miners in blockchain cryptocurrency</h3>
 
+                <p class="project-category">Explanation</p>
+
+              </a>
             </li>
 
             
+            <li class="project-item  active" data-filter-item data-category="diataxis">
+              <a href="https://decentrapress.com/inside-metas-2022-q1-financial-report/" target="_blank">
 
-          </ol>
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-        </section>
+                  <img src="assets/images/meta.jpg" alt="Photo" loading="lazy">
+                </figure>
 
-        <section class="skill">
+                <h3 class="project-title">Inside Meta’s 2022 Q1 Financial Report</h3>
 
-          <h3 class="h3 skills-title">My skills</h3>
+                <p class="project-category">Reference</p>
 
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Technical communication | Content strategy | Information architecture </h5>
-                
-              </div>
+              </a>
             </li>
+          
 
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Product documentation | Content design and development | Open source documentation</h5>
-                
-              </div>
-            </li>
 
-              
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Languages: Python, SQL </h5>
-                
-              </div>
-
-            
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Frameworks: Tensorflow, Flask</h5>
-                
-              </div>
-
-              
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">TOOLS: Text editors | MS Office | Swagger | Git | Docusarus | Postman</h5>
-                
-              </div>
-
-              
-
-            </li>
 
           </ul>
 
         </section>
 
       </article>
-
-
 
       <!--
         - #BLOG
@@ -543,63 +753,11 @@
 
           <ul class="blog-posts-list">
 
-            <li class="blog-post-item">
-              <a href="https://decentrapress.com/the-role-of-miners-in-blockchain-cryptocurrency/" target="_blank">
+            <!-- <li class="blog-post-item">
+              <a href="https://ayoyissa.hashnode.dev/fake-news-detection-with-machine-learning-and-flask" target="_blank">
 
                 <figure class="blog-banner-box">
-                  <img src="assets/images/mine.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Web3</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">May 20, 2022 </time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The role of miners in blockchain & cryptocurrency</h3>
-
-                  
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="assets/images/luna.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">May 19, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">What went wrong with Luna?</h3>
-
-                  
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="assets/images/eval.jpg" alt="Design digest #80" loading="lazy">
+                  <img src="assets/images/fake_news.jpg" alt="Photo by Kayla Velasquez on unsplash" loading="lazy">
                 </figure>
 
                 <div class="blog-content">
@@ -609,38 +767,41 @@
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Jan 23, 2022</time>
+                    <time datetime="2022-02-23">Jun 15, 2022 </time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Evaluation Metrics for an ML Regression model</h3> 
+                  <h3 class="h3 blog-item-title">Fake News Detection with Machine Learning and Flask</h3>
 
                   
 
                 </div>
 
               </a>
-            </li>
+            </li> -->
+            
 
             <li class="blog-post-item">
-              <a href="#">
+              <a href="https://ayoyissa.substack.com/p/there-are-usually-pitsops-its-a-journey" target="_blank">
 
                 <figure class="blog-banner-box">
-                  <img src="assets/images/tab.jpg" alt="UI interactions of the week" loading="lazy">
+                  <img src="assets/images/hiker.jpg" alt="Image by Ales Krivec from Pixabay" loading="lazy">
                 </figure>
 
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">ML</p>
+                    <p class="blog-category">Substack Newsletter</p>
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Mar 13, 2022</time>
+                    <time datetime="2022-02-23">March 6, 2023</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Machine Learning and Tabular Data</h3>
+                  <h3 class="h3 blog-item-title"> There Are Usually Pitstops. It's a Journey.</h3>
 
-                  
+                  <p class="blog-text">
+                    A personal look into overcoming roadblocks and looking ahead.
+                  </p>
 
                 </div>
 
@@ -648,7 +809,35 @@
             </li>
 
             <li class="blog-post-item">
-              <a href="#">
+              <a href="https://ayoyissa.substack.com/p/why-we-cant-have-nice-things-the" target="_blank">
+
+                <figure class="blog-banner-box">
+                  <img src="assets/images/fantasy.jpg" alt="Image by Stefan Keller from Pixabay" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Substack Newsletter</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">February 20, 2023</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Why We Can't Have Nice Things: The Problem with Utopian Thinking</h3>
+
+                  <p class="blog-text">
+                    Why our inherent selfishness makes a perfect society nearly impossible to achieve
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+            
+            <li class="blog-post-item">
+              <a href="https://medium.com/motivate-the-mind/8-tips-for-getting-out-of-a-slump-7c8a3f018336" target="_blank">
 
                 <figure class="blog-banner-box">
                   <img src="assets/images/slump.jpeg" alt="https://unsplash.com/@nate_dumlao?utm_source=medium&utm_medium=referral" loading="lazy">
@@ -657,11 +846,11 @@
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category">Medium blog</p>
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <time datetime="2022-02-23">Apr 11, 2022</time>
                   </div>
 
                   <h3 class="h3 blog-item-title">8 Tips for Getting out of a Slump</h3>
@@ -675,8 +864,12 @@
               </a>
             </li>
 
+            
+
+            
+
             <li class="blog-post-item">
-              <a href="#">
+              <a href="https://medium.com/curious/use-love-languages-to-be-the-partner-you-want-to-be-8c340a7390ad" target="_blank">
 
                 <figure class="blog-banner-box">
                   <img src="assets/images/love.jpeg" alt="https://unsplash.com/@sharonmccutcheon?utm_source=medium&utm_medium=referral" loading="lazy">
@@ -685,11 +878,11 @@
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category">Medium Blog</p>
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <time datetime="2022-02-23">Dec 09, 2021</time>
                   </div>
 
                   <h3 class="h3 blog-item-title">Use Love Languages to Be the Partner You Want To Be</h3>
@@ -709,7 +902,206 @@
 
       </article>
 
+      <!--
+        - #RESUME
+      -->
 
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">Technical Skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5"><b>Languages:</b> Python, Javascript, HTML</h5>
+                
+              </div>
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5"><b>Frameworks:</b> Flask, Bootstrap, Django, Vuepress, Diataxis</h5>
+                
+              </div>
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5"><b>Databases:</b> MySQL, MongoDB, PostgreSQL</h5>
+                
+              </div>
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5"><b>Tools:</b> Postman, Docker, GIT, GitHub, AWS, GCP, Docusaurus, Gitlab, Swagger, Selenium, Snagit, Mermaid, Microsoft Office, Visio, WordPress.</h5>
+                
+              </div>
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5"><b>Development Skills:</b> : Blockchain Development (web3), Usability Testing and Research, DevOps, Documentation Engineering, Data Science and Machine Learning (DS/ML), Cloud Infrastructure, Software Development Life Cycle (SDLC), Test Driven Development (TDD), Virtual Machines.</h5>
+                
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+        
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Freelance Technical Writer | Multiple Clients</h4>
+
+              <span>Jan. 2022 - Present</span>
+
+              <p class="timeline-text">
+                - Prestigious client portfolio including 
+                <a href="https://www.knowledgeowl.com" style="display: inline;">KnowledgeOwl</a>,
+                <a style="display: inline;">Stasbytes</a>,
+                <a href="https://www.mindsdb.com" style="display: inline;">MindsDB</a>,
+                <a href="https://www.decentrapress.com" style="display: inline;">Decentrapress</a>.
+              </p>
+
+              <p class="timeline-text">
+                - Enlightened over 100,000 developers, amplifying product visibility.
+              </p>
+
+              <p class="timeline-text">
+                - Revamped conventional documentation into interactive and captivating content.
+
+              </p>
+
+              <p class="timeline-text">
+                - Conducted research to ensure accuracy and relevancy of content.
+
+              </p>
+
+              <p class="timeline-text">
+                - Managed content calendars and executed SEO strategies, achieving top Google rankings for key posts.
+
+              </p>
+
+              <p class="timeline-text">
+                - Wrote about the latest tech trends, enhancing the client's blog traffic and industry relevance
+
+              </p>
+
+            </li>
+            
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Technical Writer and Instructional Designer | Boffin Education</h4>
+
+              <span>May 2023 - July 2023</span>
+
+              <p class="timeline-text">
+                - Creating visually appealing infographics to enhance content presentation.
+                                                
+              </p>
+
+              <p class="timeline-text">
+                - Collaborating with subject matter experts to gather and interpret technical information.
+
+              </p>
+
+              <p class="timeline-text">
+                - Copy editing and proofreading documents for accuracy, grammar, and style consistency.
+
+              </p>
+
+              <p class="timeline-text">
+                - Conducting research to ensure accuracy and relevancy of content.
+
+              </p>
+
+
+            </li>
+
+            <!-- <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Machine Learning Engineering and Project Management Intern, STEM-AWAY </h4>
+
+              <span>Jun 2021 - Aug 2021 </span>
+
+              <p class="timeline-text">
+                • Coordinated Communication and Teamwork Between Team Members
+              </p>
+
+              <p class="timeline-text">
+                • Managed the team over 4 different timezones
+              </p>
+
+              <p class="timeline-text">
+                • Created and Implemented Recommender System with model accuracy of over 70%
+              </p>
+
+            </li> -->
+
+            
+
+          </ol>
+
+        </section>
+
+        
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">University of Ibadan, Nigeria</h4>
+
+              <span> BSc. Statistics            2017 — 2023</span>
+
+              <p class="timeline-text">
+                Related Coursework: Statistical Learning, Probability, Calculus, Algebra
+              </p>
+
+            </li>
+
+            
+
+          </ol>
+
+      </article>
 
 
 
@@ -751,241 +1143,7 @@
       </article>
 
 
-       <!--
-        - #PORTFOLIO
-      -->
 
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Orizon</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
 
 
 
