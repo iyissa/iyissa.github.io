@@ -1,1172 +1,1277 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ayo Yissa Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayomide Yissa — Documentation & Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1814;
+    --ink-muted: #6b6560;
+    --ink-faint: #a8a39e;
+    --paper: #faf8f5;
+    --paper-warm: #f3f0eb;
+    --paper-card: #ffffff;
+    --accent: #2d5a3d;
+    --accent-light: #e8f0eb;
+    --accent-mid: #4a7c5c;
+    --border: #e2ddd8;
+    --border-light: #ede9e4;
+    --serif: 'Lora', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
 
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  html { scroll-behavior: smooth; }
 
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 248, 245, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-light);
+    padding: 0 2rem;
+  }
+
+  .nav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink-muted);
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: color 0.2s, background 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--ink);
+    background: var(--paper-warm);
+  }
+
+  /* PAGES */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* LAYOUT */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 64px 0 48px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-inner {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+  }
+
+  .hero-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--border);
+    background: var(--paper-warm);
+  }
+
+  .hero-photo-placeholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid var(--border);
+    background: var(--paper-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--ink-faint);
+    font-family: var(--sans);
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .hero-text { flex: 1; padding-top: 4px; }
+
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  .tag-green {
+    background: var(--accent-light);
+    color: var(--accent);
+    border: 1px solid #c5d9cb;
+  }
+
+  .tag-neutral {
+    background: var(--paper-warm);
+    color: var(--ink-muted);
+    border: 1px solid var(--border);
+  }
+
+  /* HOME SECTIONS */
+  .home-section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .home-section:last-child { border-bottom: none; }
+
+  .section-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 20px;
+  }
+
+  .intro-text {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  .intro-text em {
+    font-style: italic;
+    color: var(--accent-mid);
+  }
+
+  /* TWO CAPABILITY CARDS */
+  .cap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .cap-card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+    transition: border-color 0.2s;
+  }
+
+  .cap-card:hover { border-color: #c5d9cb; }
+
+  .cap-card-title {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .cap-card-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  .cap-card-tools {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+    font-size: 11px;
+    color: var(--ink-faint);
+    line-height: 1.6;
+  }
+
+  /* WORK LIST */
+  .work-list { display: flex; flex-direction: column; gap: 0; }
+
+  .work-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-light);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.15s;
+    cursor: pointer;
+  }
+
+  .work-item:last-child { border-bottom: none; }
+  .work-item:hover { opacity: 0.7; }
+
+  .work-item-left { flex: 1; }
+
+  .work-item-type {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 4px;
+  }
+
+  .work-item-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 3px;
+    line-height: 1.4;
+  }
+
+  .work-item-desc {
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  .work-item-arrow {
+    font-size: 13px;
+    color: var(--ink-faint);
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: color 0.15s;
+  }
+
+  .work-item:hover .work-item-arrow { color: var(--accent); }
+
+  .badge-soon {
+    font-size: 10px;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 6px;
+    font-weight: 400;
+  }
+
+  /* CTA */
+  .cta-block {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+  }
+
+  .cta-text {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .cta-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .cta-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 1px solid #c5d9cb;
+    border-radius: 20px;
+    background: var(--accent-light);
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .cta-link:hover {
+    background: #d8eadd;
+    border-color: var(--accent-mid);
+  }
+
+  .cta-link.secondary {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--ink-muted);
+  }
+
+  .cta-link.secondary:hover {
+    background: var(--paper-warm);
+    border-color: var(--ink-faint);
+    color: var(--ink);
+  }
+
+  /* PAGE HEADER */
+  .page-header {
+    padding: 56px 0 36px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    max-width: 520px;
+  }
+
+  /* WORK PAGE */
+  .filter-row {
+    display: flex;
+    gap: 6px;
+    padding: 28px 0 0;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    font-size: 12px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--ink-muted);
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: all 0.15s;
+  }
+
+  .filter-btn:hover { border-color: var(--ink-faint); color: var(--ink); }
+
+  .filter-btn.active {
+    background: var(--accent-light);
+    border-color: #c5d9cb;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .work-full-list {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .work-full-item {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .work-full-item:last-child { border-bottom: none; }
+
+  .wfi-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  .wfi-type {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 5px;
+  }
+
+  .wfi-title {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .wfi-link {
+    font-size: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 4px 12px;
+    border: 1px solid #c5d9cb;
+    border-radius: 20px;
+    background: var(--accent-light);
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: background 0.15s;
+  }
+
+  .wfi-link:hover { background: #d8eadd; }
+
+  .wfi-desc {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .wfi-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .tool-tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--paper-warm);
+    color: var(--ink-muted);
+    border: 1px solid var(--border-light);
+  }
+
+  /* ABOUT PAGE */
+  .about-content {
+    padding: 48px 0;
+  }
+
+  .about-body {
+    max-width: 620px;
+  }
+
+  .about-body p {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .about-body p:last-child { margin-bottom: 0; }
+
+  .about-body em {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--accent-mid);
+  }
+
+  .about-divider {
+    border: none;
+    border-top: 1px solid var(--border-light);
+    margin: 40px 0;
+  }
+
+  .about-looking {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+  }
+
+  .about-looking-title {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .about-looking p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .about-looking p:last-child { margin-bottom: 0; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .skills-col-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 12px;
+  }
+
+  .skills-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .skills-list li {
+    font-size: 13px;
+    color: var(--ink-muted);
+    padding-left: 12px;
+    position: relative;
+  }
+
+  .skills-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 4px;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+
+  /* WRITING PAGE */
+  .writing-list {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .writing-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-light);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.15s;
+  }
+
+  .writing-item:last-child { border-bottom: none; }
+  .writing-item:hover { opacity: 0.65; }
+
+  .writing-item-left { flex: 1; }
+
+  .writing-source {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 4px;
+  }
+
+  .writing-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 3px;
+  }
+
+  .writing-desc {
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  .writing-arrow {
+    font-size: 13px;
+    color: var(--ink-faint);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border-light);
+    padding: 32px 0;
+    margin-top: 40px;
+  }
+
+  .footer-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-name {
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--ink-muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: var(--ink-faint);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  /* CASE STUDY MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 24, 20, 0.5);
+    z-index: 200;
+    overflow-y: auto;
+    padding: 40px 20px;
+  }
+
+  .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+
+  .modal {
+    background: var(--paper);
+    border-radius: 12px;
+    max-width: 640px;
+    width: 100%;
+    padding: 40px;
+    position: relative;
+    margin: auto;
+    border: 1px solid var(--border);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 20px;
+    color: var(--ink-faint);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: var(--sans);
+    line-height: 1;
+    transition: color 0.15s;
+  }
+
+  .modal-close:hover { color: var(--ink); }
+
+  .modal-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 12px;
+  }
+
+  .modal-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .modal-section { margin-bottom: 24px; }
+
+  .modal-section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    margin-bottom: 8px;
+  }
+
+  .modal-section p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.7;
+  }
+
+  .modal-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .page.active .container > * {
+    animation: fadeUp 0.35s ease forwards;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .hero-inner { flex-direction: column; gap: 16px; }
+    .cap-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .nav-links a { padding: 6px 10px; font-size: 12px; }
+    .modal { padding: 28px 22px; }
+  }
+</style>
 </head>
-
 <body>
 
-  <!--
-    - #MAIN
-  -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="showPage('home')">Ayomide Yissa</a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+      <li><a href="#" onclick="showPage('work')" id="nav-work">Work</a></li>
+      <li><a href="#" onclick="showPage('writing')" id="nav-writing">Writing</a></li>
+      <li><a href="#" onclick="showPage('about')" id="nav-about">About</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <main>
+<!-- ═══════════════════════════════════════════════ HOME PAGE -->
+<div id="page-home" class="page active">
+  <div class="container">
 
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="assets/images/danladi.jpeg" alt="Richard hanrick" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Ayomide Yissa">Ayomide Yissa</h1>
-
-          <p class="title">Technical Writer</p>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-photo-placeholder">your<br>photo</div>
+        <div class="hero-text">
+          <h1 class="hero-headline">Working to help organisations build systems and gain clarity.</h1>
+          <p class="hero-sub">Ayomide Yissa &nbsp;·&nbsp; Documentation & Systems &nbsp;·&nbsp; Lagos, Nigeria</p>
+          <div class="hero-tags">
+            <span class="tag tag-green">Information Architecture</span>
+            <span class="tag tag-neutral">Technical Documentation</span>
+            <span class="tag tag-neutral">Business Operations</span>
+          </div>
         </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
       </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:ayomideyissa@gmail.com" class="contact-link">ayomideyissa@gmail.com</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+(234)8178627256" class="contact-link">+(234) 8178627256</a>
-            </div>
-
-          </li>
-
-          
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Lagos, Nigeria</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>About</button>
-          </li>
-
-
-
-           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <!-- <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li> -->
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            I am an experienced technical writer skilled in clearly explaining complex topics through documentation, guides, API references, and web content. With expertise spanning various niche industries, I have contributed to multiple open source projects, particularly in documenting APIs for sports and financial technology products. 
-            My primary goal is to enhance the usability and readability of technical documentation.
-          
-          </p>
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
-
-          <ul class="service-list">
-
-            
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="assets/images/tw.png" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Technical Writing</h4>
-
-                <p class="service-item-text">
-                  Producing quality documentation, articles, blog posts, and infographics.
-                </p>
-              </div>
-
-            </li>
-
-            <!-- <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="assets/images/ml.png
-                " alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">DS & Machine Learning</h4>
-
-                <p class="service-item-text">
-                  Using modern frameworks to create and implement models that will benefit both businesses and users.
-                </p>
-              </div>
-
-            </li> -->
-
-            
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Worked For</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="assets/images/KO.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>KnowledgeOwl</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Software teams use KnowledgeOwl daily to build, manage, and share public and private knowledge bases with their customers and teams with ease.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="assets/images/stemaway.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>STEM-AWAY</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    THE SKILL-CENTRIC CAREER HUB. Building the next generation of inclusive STEM leaders
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="assets/images/decentrapress.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>DECENTRAPRESS</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Decentrapress aims to add value to the web3 community by creating content about 
-                    emerging Web 3.0 technologies such as DAO, NFT, Blockchain. DeFi and the Metaverse
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
+    </section>
+
+    <section class="home-section">
+      <p class="section-eyebrow">A bit about me</p>
+      <p class="intro-text">
+        As a writer, I'm curious about how complex systems work and I love explaining them clearly. Over time, that curiosity expanded beyond writing into the systems behind it: how documentation is structured, how information flows, and why things break as organisations grow. Today I work at the intersection of <em>documentation, information architecture, and business operations</em> — always asking the same question: can this be clearer?
+      </p>
+    </section>
+
+    <section class="home-section">
+      <p class="section-eyebrow">Two things I do</p>
+      <div class="cap-grid">
+        <div class="cap-card">
+          <p class="cap-card-title">Documentation &amp; Information Architecture</p>
+          <p class="cap-card-desc">I design how organisations structure and deliver information. Creating dev docs, API references, knowledge bases. I don't just write docs, I understand how it fits into the bigger picture.</p>
+          <p class="cap-card-tools"> Docs-as-Code · Diataxis · Taxonomy </p>
         </div>
+        <div class="cap-card">
+          <p class="cap-card-title">Systems &amp; Operations Design</p>
+          <p class="cap-card-desc">I design the systems that organisations run on—structuring how information is organised, how work flows, and how processes scale as things grow. I design systems that are structured, repeatable, and built for long-term use.</p>
+          <p class="cap-card-tools">HubSpot · Zapier · Airtable · Apps Script</p>
+        </div>
+      </div>
+    </section>
 
-
-        <!--
-          - clients
-        -->
-
-
-
-      </article>
-
-
-
-
-
-
-
-       <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Documentation</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Open Source</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Diataxis</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Documentation</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Open Source</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Diataxis</button>
-              </li>
-
-            </ul>
-
+    <section class="home-section">
+      <p class="section-eyebrow">Selected work</p>
+      <div class="work-list">
+        <div class="work-item" onclick="openModal('modal-progress')">
+          <div class="work-item-left">
+            <p class="work-item-type">Systems & Ops · Case study</p>
+            <p class="work-item-title">Progress Report Automation System</p>
+            <p class="work-item-desc">Designed a complete student reporting system — from defining what "progress" meant organisationally, to automated PDF generation.</p>
           </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="documentation">
-              <a href="https://ayomide-yissa.gitbook.io/yh-finance-docs/" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/finance_docs.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance API Documentation</h3>
-
-                <p class="project-category">Documentation</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="diataxis">
-              <a href="https://blog.knowledgeowl.com/blog/posts/optimizing-visuals-in-tech-docs/" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="assets/images/barnowl-color.png" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Optimizing Visuals in Technical Documentation</h3>
-
-                <p class="project-category">Guides</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="diataxis">
-              <a href="https://ayoyissa.hashnode.dev/what-is-a-confusion-matrix" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="assets/images/confusion.avif" alt="Photo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">What is a Confusion Matrix?</h3>
-
-                <p class="project-category">Reference</p>
-
-              </a>
-            </li>
- 
-            <li class="project-item  active" data-filter-item data-category="diataxis">
-              <a href="https://ayoyissa.hashnode.dev/fake-news-detection-with-machine-learning-and-flask" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/fake_news.jpg" alt="Photo by Kayla Velasquez on unsplash" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fake News Detection with Machine Learning and Flask</h3>
-
-                <p class="project-category">Tutorial</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="diataxis">
-              <a href="https://ayoyissa.hashnode.dev/evaluation-metrics-for-an-ml-regression-model" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="assets/images/eval.jpg" alt="Photo by Dan-Cristian Pădureț on Unsplash" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Evaluation Metrics for Machine Learning Regression</h3>
-
-                <p class="project-category">How-To Guides</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="diataxis">
-              <a href="https://decentrapress.com/interoperability/" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="assets/images/interoperability.jpg" alt="Photo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Blockchain Interoperability</h3>
-
-                <p class="project-category">Explanation</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="diataxis">
-              <a href="https://ayoyissa.hashnode.dev/using-nba-api-package-tutorial" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/nba_api.jpg" alt="Photo by Jed Villejo on Unsplash" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Using NBA-API package Tutorial</h3>
-
-                <p class="project-category">Tutorial</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="documentation">
-              <a href="https://nbaapi-docs.netlify.app/" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/nba_api.jpg" alt="NBA Package Documentation" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">NBA-API Docs</h3>
-
-                <p class="project-category">OS Documentation Contribution</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="open source">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="assets/images/download.png" alt="The Good Docs Project" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">The Good Docs Project</h3>
-
-                <p class="project-category">Open Source Technical Documentation</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="open source">
-              <a href="https://docs.mindsdb.com/integrations/data-integrations/ibm-db2" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="assets/images/mindsdb.png" alt="MindsDb Logo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Mindsdb Ibm-db2 Integration Docs.</h3>
-
-                <p class="project-category">Documentation</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="open source">
-              <a href="https://ayoyissa.hashnode.dev/mindsdb-tutorial-how-to-predict-the-cost-of-weather-and-climate-disasters" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="assets/images/mindsb_article.png" alt="MindsDb Logo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Mindsdb Tutorial Contribution</h3>
-
-                <p class="project-category">Tutorial</p>
-
-              </a>
-            </li>
-            
-            <li class="project-item  active" data-filter-item data-category="diataxis">
-              <a href="https://ayoyissa.hashnode.dev/analyzing-real-time-stock-data-with-python-and-streamlit" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="assets/images/stock.avif" alt="Photo by Chris Liverani on Unsplash" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Stock Data Tutorial with Python and Streamlit</h3>
-
-                <p class="project-category">Tutorial</p>
-
-              </a>
-            </li>
-
-            
-            
-            <li class="project-item  active" data-filter-item data-category="diataxis">
-              <a href="https://dev.to/iyissa/machine-learning-and-tabular-data-mbm" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="assets/images/tab.jpg" alt="Photo by Alina Grubnyak on Unsplash" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Machine Learning and Tabular Data</h3>
-
-                <p class="project-category">How-To Guides</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="diataxis">
-              <a href="https://decentrapress.com/the-role-of-miners-in-blockchain-cryptocurrency/" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="assets/images/mine.jpg" alt="Photo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">The role of miners in blockchain cryptocurrency</h3>
-
-                <p class="project-category">Explanation</p>
-
-              </a>
-            </li>
-
-            
-            <li class="project-item  active" data-filter-item data-category="diataxis">
-              <a href="https://decentrapress.com/inside-metas-2022-q1-financial-report/" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="assets/images/meta.jpg" alt="Photo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Inside Meta’s 2022 Q1 Financial Report</h3>
-
-                <p class="project-category">Reference</p>
-
-              </a>
-            </li>
-          
-
-
-
-          </ul>
-
-        </section>
-
-      </article>
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog">
-
-        <header>
-          <h2 class="h2 article-title">Writing Samples</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <!-- <li class="blog-post-item">
-              <a href="https://ayoyissa.hashnode.dev/fake-news-detection-with-machine-learning-and-flask" target="_blank">
-
-                <figure class="blog-banner-box">
-                  <img src="assets/images/fake_news.jpg" alt="Photo by Kayla Velasquez on unsplash" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">ML</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Jun 15, 2022 </time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Fake News Detection with Machine Learning and Flask</h3>
-
-                  
-
-                </div>
-
-              </a>
-            </li> -->
-            
-
-            <li class="blog-post-item">
-              <a href="https://ayoyissa.substack.com/p/there-are-usually-pitsops-its-a-journey" target="_blank">
-
-                <figure class="blog-banner-box">
-                  <img src="assets/images/hiker.jpg" alt="Image by Ales Krivec from Pixabay" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Substack Newsletter</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">March 6, 2023</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title"> There Are Usually Pitstops. It's a Journey.</h3>
-
-                  <p class="blog-text">
-                    A personal look into overcoming roadblocks and looking ahead.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="https://ayoyissa.substack.com/p/why-we-cant-have-nice-things-the" target="_blank">
-
-                <figure class="blog-banner-box">
-                  <img src="assets/images/fantasy.jpg" alt="Image by Stefan Keller from Pixabay" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Substack Newsletter</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">February 20, 2023</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Why We Can't Have Nice Things: The Problem with Utopian Thinking</h3>
-
-                  <p class="blog-text">
-                    Why our inherent selfishness makes a perfect society nearly impossible to achieve
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-            
-            <li class="blog-post-item">
-              <a href="https://medium.com/motivate-the-mind/8-tips-for-getting-out-of-a-slump-7c8a3f018336" target="_blank">
-
-                <figure class="blog-banner-box">
-                  <img src="assets/images/slump.jpeg" alt="https://unsplash.com/@nate_dumlao?utm_source=medium&utm_medium=referral" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Medium blog</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Apr 11, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">8 Tips for Getting out of a Slump</h3>
-
-                  <p class="blog-text">
-                    Are you in a slump? Unsure of whether you feel burnout or not? This might be something you need to read.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            
-
-            
-
-            <li class="blog-post-item">
-              <a href="https://medium.com/curious/use-love-languages-to-be-the-partner-you-want-to-be-8c340a7390ad" target="_blank">
-
-                <figure class="blog-banner-box">
-                  <img src="assets/images/love.jpeg" alt="https://unsplash.com/@sharonmccutcheon?utm_source=medium&utm_medium=referral" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Medium Blog</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Dec 09, 2021</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Use Love Languages to Be the Partner You Want To Be</h3>
-
-                  <p class="blog-text">
-                    Love is not always as complicated as it seems, sometimes all you need to do is learn how to speak the language.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">Technical Skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5"><b>Languages:</b> Python, Javascript, HTML</h5>
-                
-              </div>
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5"><b>Frameworks:</b> Flask, Bootstrap, Django, Vuepress, Diataxis</h5>
-                
-              </div>
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5"><b>Databases:</b> MySQL, MongoDB, PostgreSQL</h5>
-                
-              </div>
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5"><b>Tools:</b> Postman, Docker, GIT, GitHub, AWS, GCP, Docusaurus, Gitlab, Swagger, Selenium, Snagit, Mermaid, Microsoft Office, Visio, WordPress.</h5>
-                
-              </div>
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5"><b>Development Skills:</b> : Blockchain Development (web3), Usability Testing and Research, DevOps, Documentation Engineering, Data Science and Machine Learning (DS/ML), Cloud Infrastructure, Software Development Life Cycle (SDLC), Test Driven Development (TDD), Virtual Machines.</h5>
-                
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-        
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
+          <span class="work-item-arrow">→</span>
+        </div>
+        <div class="work-item" onclick="openModal('modal-revops')">
+          <div class="work-item-left">
+            <p class="work-item-type">Systems & Ops · Case study</p>
+            <p class="work-item-title">Revenue Operations Infrastructure</p>
+            <p class="work-item-desc">Architected the full RevOps stack for a $2M+ organisation — connecting every stage from first inquiry to fulfilment.</p>
           </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Freelance Technical Writer | Multiple Clients</h4>
-
-              <span>Jan. 2022 - Present</span>
-
-              <p class="timeline-text">
-                - Prestigious client portfolio including 
-                <a href="https://www.knowledgeowl.com" style="display: inline;">KnowledgeOwl</a>,
-                <a style="display: inline;">Stasbytes</a>,
-                <a href="https://www.mindsdb.com" style="display: inline;">MindsDB</a>,
-                <a href="https://www.decentrapress.com" style="display: inline;">Decentrapress</a>.
-              </p>
-
-              <p class="timeline-text">
-                - Enlightened over 100,000 developers, amplifying product visibility.
-              </p>
-
-              <p class="timeline-text">
-                - Revamped conventional documentation into interactive and captivating content.
-
-              </p>
-
-              <p class="timeline-text">
-                - Conducted research to ensure accuracy and relevancy of content.
-
-              </p>
-
-              <p class="timeline-text">
-                - Managed content calendars and executed SEO strategies, achieving top Google rankings for key posts.
-
-              </p>
-
-              <p class="timeline-text">
-                - Wrote about the latest tech trends, enhancing the client's blog traffic and industry relevance
-
-              </p>
-
-            </li>
-            
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Technical Writer and Instructional Designer | Boffin Education</h4>
-
-              <span>May 2023 - July 2023</span>
-
-              <p class="timeline-text">
-                - Creating visually appealing infographics to enhance content presentation.
-                                                
-              </p>
-
-              <p class="timeline-text">
-                - Collaborating with subject matter experts to gather and interpret technical information.
-
-              </p>
-
-              <p class="timeline-text">
-                - Copy editing and proofreading documents for accuracy, grammar, and style consistency.
-
-              </p>
-
-              <p class="timeline-text">
-                - Conducting research to ensure accuracy and relevancy of content.
-
-              </p>
-
-
-            </li>
-
-            <!-- <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Machine Learning Engineering and Project Management Intern, STEM-AWAY </h4>
-
-              <span>Jun 2021 - Aug 2021 </span>
-
-              <p class="timeline-text">
-                • Coordinated Communication and Teamwork Between Team Members
-              </p>
-
-              <p class="timeline-text">
-                • Managed the team over 4 different timezones
-              </p>
-
-              <p class="timeline-text">
-                • Created and Implemented Recommender System with model accuracy of over 70%
-              </p>
-
-            </li> -->
-
-            
-
-          </ol>
-
-        </section>
-
-        
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
+          <span class="work-item-arrow">→</span>
+        </div>
+        <a class="work-item" href="https://ayomide-yissa.gitbook.io/yh-finance-docs/" target="_blank">
+          <div class="work-item-left">
+            <p class="work-item-type">Documentation · API reference</p>
+            <p class="work-item-title">Finance API Documentation</p>
+            <p class="work-item-desc">Full API reference, authentication guide, and endpoint documentation for a financial data product.</p>
           </div>
+          <span class="work-item-arrow">↗</span>
+        </a>
+        <a class="work-item" href="https://nbaapi-docs.netlify.app/" target="_blank">
+          <div class="work-item-left">
+            <p class="work-item-type">Documentation · Open source</p>
+            <p class="work-item-title">NBA-API Package Documentation</p>
+            <p class="work-item-desc">Designed and published community documentation for the NBA-API Python package, filling a gap in the open source project.</p>
+          </div>
+          <span class="work-item-arrow">↗</span>
+        </a>
+        <div class="work-item" style="opacity:0.5; cursor:default;">
+          <div class="work-item-left">
+            <p class="work-item-type">IA Audit · Coming soon</p>
+            <p class="work-item-title">Information Architecture Audit <span class="badge-soon">in progress</span></p>
+            <p class="work-item-desc">A full IA review of a real product — current structure, where users get lost, and a proposed redesign.</p>
+          </div>
+          <span class="work-item-arrow">—</span>
+        </div>
+      </div>
+    </section>
 
-          <ol class="timeline-list">
+    <section class="home-section">
+      <div class="cta-block">
+        <p class="cta-text">I'm looking for a full-time remote role — as an information architect, technical writer, or operations specialist — helping teams bring structure and clarity to how information is organised and how work gets done.</p>
+        <div class="cta-links">
+          <a class="cta-link" href="mailto:ayomideyissa@gmail.com">Get in touch</a>
+          <a class="cta-link secondary" href="https://www.linkedin.com/in/ayoyissa/" target="_blank">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
 
-            <li class="timeline-item">
+  </div>
+</div>
 
-              <h4 class="h4 timeline-item-title">University of Ibadan, Nigeria</h4>
+<!-- ═══════════════════════════════════════════════ WORK PAGE -->
+<div id="page-work" class="page">
+  <div class="container">
+    <header class="page-header">
+      <h1 class="page-title">Work</h1>
+      <p class="page-subtitle">A selection of documentation projects, systems I've designed, and operational infrastructure I've built. Case studies go into the thinking behind the work, not just the output.</p>
+    </header>
 
-              <span> BSc. Statistics            2017 — 2023</span>
-
-              <p class="timeline-text">
-                Related Coursework: Statistical Learning, Probability, Calculus, Algebra
-              </p>
-
-            </li>
-
-            
-
-          </ol>
-
-      </article>
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
-
-
-
-
-
+    <div class="filter-row">
+      <button class="filter-btn active" onclick="filterWork('all', this)">All work</button>
+      <button class="filter-btn" onclick="filterWork('systems', this)">Systems & Ops</button>
+      <button class="filter-btn" onclick="filterWork('docs', this)">Documentation</button>
     </div>
 
-  </main>
+    <div class="work-full-list">
 
+      <div class="work-full-item" data-category="systems">
+        <div class="wfi-header">
+          <div>
+            <p class="wfi-type">Systems & Ops · Case study</p>
+            <p class="wfi-title">Progress Report Automation System</p>
+          </div>
+          <a class="wfi-link" href="#" onclick="openModal('modal-progress'); return false;">Read case study</a>
+        </div>
+        <p class="wfi-desc">An education company had no standardised way to communicate student progress to parents. Reporting was inconsistent, manual, and disconnected from what was actually happening in the classroom. I designed the system end-to-end — starting with the hardest part: defining what "progress" actually meant across the organisation.</p>
+        <div class="wfi-tools">
+          <span class="tool-tag">Google Docs</span>
+          <span class="tool-tag">Google Sheets</span>
+          <span class="tool-tag">Google Forms</span>
+          <span class="tool-tag">Apps Script</span>
+          <span class="tool-tag">PDF automation</span>
+          <span class="tool-tag">Process design</span>
+        </div>
+      </div>
 
+      <div class="work-full-item" data-category="systems">
+        <div class="wfi-header">
+          <div>
+            <p class="wfi-type">Systems & Ops · Case study</p>
+            <p class="wfi-title">Revenue Operations Infrastructure</p>
+          </div>
+          <a class="wfi-link" href="#" onclick="openModal('modal-revops'); return false;">Read case study</a>
+        </div>
+        <p class="wfi-desc">A fast-growing edutech company had disconnected tools and no unified view of their customer pipeline. I designed and implemented the full revenue operations stack — connecting inquiry, consultation, enrolment, and fulfilment into a single coherent system for an organisation with over $2M in lifetime revenue.</p>
+        <div class="wfi-tools">
+          <span class="tool-tag">HubSpot</span>
+          <span class="tool-tag">Zapier</span>
+          <span class="tool-tag">Tutorbird</span>
+          <span class="tool-tag">Shippo</span>
+          <span class="tool-tag">Google Meet</span>
+          <span class="tool-tag">Meta Ads</span>
+        </div>
+      </div>
 
+      <div class="work-full-item" data-category="docs">
+        <div class="wfi-header">
+          <div>
+            <p class="wfi-type">Documentation · API reference</p>
+            <p class="wfi-title">Finance API Documentation</p>
+          </div>
+          <a class="wfi-link" href="https://ayomide-yissa.gitbook.io/yh-finance-docs/" target="_blank">View docs ↗</a>
+        </div>
+        <p class="wfi-desc">Full API reference documentation for a financial data product — including authentication flows, endpoint references, parameter tables, and example responses. Built in Gitbook with a focus on developer usability.</p>
+        <div class="wfi-tools">
+          <span class="tool-tag">Gitbook</span>
+          <span class="tool-tag">API documentation</span>
+          <span class="tool-tag">Developer reference</span>
+        </div>
+      </div>
 
+      <div class="work-full-item" data-category="docs">
+        <div class="wfi-header">
+          <div>
+            <p class="wfi-type">Documentation · Open source</p>
+            <p class="wfi-title">NBA-API Package Documentation</p>
+          </div>
+          <a class="wfi-link" href="https://nbaapi-docs.netlify.app/" target="_blank">View docs ↗</a>
+        </div>
+        <p class="wfi-desc">Community documentation for the NBA-API Python package — an open source project that lacked a proper reference. Designed the IA, wrote the guides and endpoint references, and deployed the site. Also wrote an accompanying tutorial on using the package.</p>
+        <div class="wfi-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Netlify</span>
+          <span class="tool-tag">Open source</span>
+          <span class="tool-tag">Information architecture</span>
+        </div>
+      </div>
 
+      <div class="work-full-item" data-category="docs">
+        <div class="wfi-header">
+          <div>
+            <p class="wfi-type">Documentation · Open source contribution</p>
+            <p class="wfi-title">MindsDB IBM-db2 Integration Docs</p>
+          </div>
+          <a class="wfi-link" href="https://docs.mindsdb.com/integrations/data-integrations/ibm-db2" target="_blank">View docs ↗</a>
+        </div>
+        <p class="wfi-desc">Contributed the IBM-db2 integration documentation to the MindsDB open source project — covering setup, configuration, and usage with the MindsDB AI layer.</p>
+        <div class="wfi-tools">
+          <span class="tool-tag">MindsDB</span>
+          <span class="tool-tag">IBM DB2</span>
+          <span class="tool-tag">Open source</span>
+        </div>
+      </div>
 
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
+      <div class="work-full-item" data-category="docs" style="opacity:0.55;">
+        <div class="wfi-header">
+          <div>
+            <p class="wfi-type">IA Audit · In progress</p>
+            <p class="wfi-title">Information Architecture Audit <span class="badge-soon">coming soon</span></p>
+          </div>
+        </div>
+        <p class="wfi-desc">A full IA review of a real product — mapping the current structure, identifying where users get lost, and proposing a redesigned architecture with before/after diagrams.</p>
+        <div class="wfi-tools">
+          <span class="tool-tag">IA review</span>
+          <span class="tool-tag">Structural redesign</span>
+          <span class="tool-tag">Documentation strategy</span>
+        </div>
+      </div>
 
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </div>
+  </div>
+</div>
 
+<!-- ═══════════════════════════════════════════════ WRITING PAGE -->
+<div id="page-writing" class="page">
+  <div class="container">
+    <header class="page-header">
+      <h1 class="page-title">Writing</h1>
+      <p class="page-subtitle">Articles on documentation strategy, knowledge base design, systems thinking, and operations. I write to figure things out as much as to explain them.</p>
+    </header>
+
+    <div class="writing-list">
+
+      <a class="writing-item" href="https://www.knowledgeowl.com/blog/posts/calculating-the-roi-of-documentation" target="_blank">
+        <div class="writing-item-left">
+          <p class="writing-source">KnowledgeOwl · Documentation strategy</p>
+          <p class="writing-title">Calculating the ROI of Documentation</p>
+          <p class="writing-desc">How to measure the business value of documentation — and make the case for investing in it properly.</p>
+        </div>
+        <span class="writing-arrow">↗</span>
+      </a>
+
+      <a class="writing-item" href="https://www.knowledgeowl.com/blog/posts/help-centers-foundation-excellent-service" target="_blank">
+        <div class="writing-item-left">
+          <p class="writing-source">KnowledgeOwl · Knowledge base design</p>
+          <p class="writing-title">Help Centers as the Foundation of Excellent Service</p>
+          <p class="writing-desc">Why a well-structured help centre isn't a support tool — it's a product decision with company-wide implications.</p>
+        </div>
+        <span class="writing-arrow">↗</span>
+      </a>
+
+      <a class="writing-item" href="https://blog.knowledgeowl.com/blog/posts/optimizing-visuals-in-tech-docs/" target="_blank">
+        <div class="writing-item-left">
+          <p class="writing-source">KnowledgeOwl · Documentation craft</p>
+          <p class="writing-title">Optimizing Visuals in Technical Documentation</p>
+          <p class="writing-desc">When images help, when they hurt, and how to make the call.</p>
+        </div>
+        <span class="writing-arrow">↗</span>
+      </a>
+
+      <a class="writing-item" href="https://ayoyissa.hashnode.dev/ayos-notebook-stakeholder-management" target="_blank">
+        <div class="writing-item-left">
+          <p class="writing-source">Ayo's Notebook · Operations thinking</p>
+          <p class="writing-title">Stakeholder Management</p>
+          <p class="writing-desc">What I've learned about managing up, across, and through — from inside the work.</p>
+        </div>
+        <span class="writing-arrow">↗</span>
+      </a>
+
+      <a class="writing-item" href="https://ayoyissa.hashnode.dev/ayos-notebook-measuring-before-change-matters-more-than-you-think" target="_blank">
+        <div class="writing-item-left">
+          <p class="writing-source">Ayo's Notebook · Systems thinking</p>
+          <p class="writing-title">Measuring Before Change Matters More Than You Think</p>
+          <p class="writing-desc">Why the baseline you establish before making a change is often more valuable than the measurement you take after.</p>
+        </div>
+        <span class="writing-arrow">↗</span>
+      </a>
+
+      <a class="writing-item" href="https://ayoyissa.hashnode.dev/predictive-maintenance-with-machine-learning-process-challenges-and-insights" target="_blank">
+        <div class="writing-item-left">
+          <p class="writing-source">Hashnode · Technical writing</p>
+          <p class="writing-title">Predictive Maintenance with Machine Learning</p>
+          <p class="writing-desc">Process, challenges, and insights from documenting a complex ML application for a non-specialist audience.</p>
+        </div>
+        <span class="writing-arrow">↗</span>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ ABOUT PAGE -->
+<div id="page-about" class="page">
+  <div class="container">
+    <header class="page-header">
+      <h1 class="page-title">About</h1>
+      <p class="page-subtitle">Five years across writing, systems, and operations — and still asking the same question.</p>
+    </header>
+
+    <div class="about-content">
+      <div class="about-body">
+        <p>I started my career as a writer — curious about how complex things worked and obsessed with explaining them clearly. That instinct led me into technical writing, where I discovered something more interesting than writing itself: <em>the systems underneath the words.</em></p>
+
+        <p>Documentation lives inside processes. A knowledge base is only as good as the information architecture holding it together. A tutorial only makes sense if the product workflow it describes actually works. The more I wrote, the more I found myself redesigning the systems I was documenting.</p>
+
+        <p>Over the past five years, that instinct has taken me from writing API references and developer guides to building the operational infrastructure that organisations run on — CRM pipelines, workflow automations, progress-tracking systems. I've come into early-stage companies and created the structure that didn't exist yet: the frameworks, the tools, the processes, the documentation.</p>
+
+        <p>Along the way I interned on what's considered the best-selling technical writing manual of all time at Boffin Education, contributed to open source documentation projects including MindsDB and The Good Docs Project, and have been a regular contributor to KnowledgeOwl — writing about documentation strategy and knowledge base design.</p>
+
+        <p>I think of myself as someone who connects the dots. I take a complex system, ask why it isn't clearer, and build something that makes it so. I'm at the stage of my career where I want to <em>go deep</em> — to join a team with real structure, bring everything I've learned, and grow into the best version of what I do.</p>
+      </div>
+
+      <hr class="about-divider">
+
+      <div class="about-looking">
+        <p class="about-looking-title">What I'm looking for</p>
+        <p>A full-time role — as an information architect, technical writer, or operations specialist — at an organisation that's clear about where it's going and serious about developing its people.</p>
+        <p>Role titles that fit what I do: Information Architect, Documentation Engineer, Technical Writer, Knowledge Systems Lead, Technical Program Manager, Operations Specialist. I'm more interested in the problem than the title.</p>
+        <p style="margin-top:14px">
+          <a href="mailto:ayomideyissa@gmail.com" style="color:var(--accent); text-decoration:none; font-weight:500;">ayomideyissa@gmail.com</a>
+          &nbsp;·&nbsp;
+          <a href="https://www.linkedin.com/in/ayoyissa/" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:500;">LinkedIn ↗</a>
+        </p>
+      </div>
+
+      <p class="section-eyebrow" style="margin-bottom:0">Tools & skills</p>
+      <div class="skills-grid">
+        <div>
+          <p class="skills-col-title">Documentation & IA</p>
+          <ul class="skills-list">
+            <li>Sphinx · Docusaurus · ReadTheDocs</li>
+            <li>KnowledgeOwl · Gitbook · Notion</li>
+            <li>Postman · Swagger</li>
+            <li>Git · GitHub · Markdown</li>
+            <li>Diataxis framework</li>
+            <li>Snagit · Mermaid</li>
+          </ul>
+        </div>
+        <div>
+          <p class="skills-col-title">Operations & Systems</p>
+          <ul class="skills-list">
+            <li>HubSpot (CRM architecture)</li>
+            <li>Zapier (automation)</li>
+            <li>Google Workspace + Apps Script</li>
+            <li>Tutorbird · Shippo</li>
+            <li>Python · JavaScript · HTML/CSS</li>
+            <li>MySQL · MongoDB</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Ayomide Yissa</span>
+    <div class="footer-links">
+      <a href="mailto:ayomideyissa@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/ayoyissa/" target="_blank">LinkedIn</a>
+      <a href="https://ayoyissa.readthedocs.io/en/latest/" target="_blank">ReadTheDocs</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════ MODALS -->
+<div class="modal-overlay" id="modal-progress" onclick="closeModalOnOverlay(event, 'modal-progress')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-progress')">×</button>
+    <p class="modal-eyebrow">Systems & Ops · Case study</p>
+    <h2 class="modal-title">Progress Report Automation System</h2>
+    <div class="modal-section">
+      <p class="modal-section-label">The problem</p>
+      <p>A growing education company had no standardised way to communicate student progress to parents. Reporting was inconsistent, manual, and didn't reflect what was actually happening in the classroom. Every instructor did it differently. Parents had no reliable window into their child's learning.</p>
+    </div>
+    <div class="modal-section">
+      <p class="modal-section-label">What I built</p>
+      <p>I started with the hardest part: defining what "progress" actually meant across the organisation. This wasn't a technical problem — it was a conceptual one. Once I had organisational alignment on the definition, I built the data collection layer using Google Forms and Sheets, created a templating system for session notes, and wrote a Google Apps Script automation that transformed raw instructor notes into formatted PDF reports delivered to parents.</p>
+    </div>
+    <div class="modal-section">
+      <p class="modal-section-label">The result</p>
+      <p>A repeatable, scalable reporting process that removed manual effort from instructors, created consistency across the organisation, and gave parents a structured, reliable view of progress. The system is still in use.</p>
+    </div>
+    <div class="modal-section">
+      <p class="modal-section-label">Tools</p>
+      <div class="modal-tools">
+        <span class="tool-tag">Google Docs</span>
+        <span class="tool-tag">Google Sheets</span>
+        <span class="tool-tag">Google Forms</span>
+        <span class="tool-tag">Apps Script</span>
+        <span class="tool-tag">PDF generation</span>
+        <span class="tool-tag">Process design</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-revops" onclick="closeModalOnOverlay(event, 'modal-revops')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-revops')">×</button>
+    <p class="modal-eyebrow">Systems & Ops · Case study</p>
+    <h2 class="modal-title">Revenue Operations Infrastructure</h2>
+    <div class="modal-section">
+      <p class="modal-section-label">The problem</p>
+      <p>A fast-growing edutech company had disconnected tools, no unified view of their customer pipeline, and no automation connecting their inquiry flow to fulfilment. Every stage — lead capture, consultation, enrolment, delivery — lived in a different system with no thread between them.</p>
+    </div>
+    <div class="modal-section">
+      <p class="modal-section-label">What I built</p>
+      <p>I designed and implemented the full revenue operations stack: HubSpot as the CRM and pipeline brain, Zapier as the automation layer connecting systems end-to-end, Tutorbird for programme management, and Shippo for fulfilment. I architected the complete flow from first inquiry through consultation, enrolment, and ongoing customer success — and built the reporting structure that gave leadership visibility across all of it.</p>
+    </div>
+    <div class="modal-section">
+      <p class="modal-section-label">The result</p>
+      <p>A connected, automated operations infrastructure for an organisation with over $2M in lifetime revenue. Leads no longer fell through the gaps between systems. The pipeline had a single source of truth. And the ops layer I built became the foundation the company's growth was measured against.</p>
+    </div>
+    <div class="modal-section">
+      <p class="modal-section-label">Tools</p>
+      <div class="modal-tools">
+        <span class="tool-tag">HubSpot</span>
+        <span class="tool-tag">Zapier</span>
+        <span class="tool-tag">Tutorbird</span>
+        <span class="tool-tag">Shippo</span>
+        <span class="tool-tag">Google Meet</span>
+        <span class="tool-tag">Meta Ads</span>
+        <span class="tool-tag">Google Workspace</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    document.getElementById('nav-' + name).classList.add('active');
+    window.scrollTo(0, 0);
+    return false;
+  }
+
+  function filterWork(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.work-full-item').forEach(item => {
+      if (cat === 'all' || item.dataset.category === cat) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOnOverlay(e, id) {
+    if (e.target === document.getElementById(id)) closeModal(id);
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(m => {
+        m.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    }
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', e => e.preventDefault());
+  });
+</script>
 </body>
-
 </html>
